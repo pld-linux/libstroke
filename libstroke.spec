@@ -75,8 +75,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	m4datadir=%{_aclocaldir}
 
-gzip -9nf AUTHORS CREDITS README* NEWS TODO
-
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
@@ -85,7 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS CREDITS README* NEWS TODO
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
