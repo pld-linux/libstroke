@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Libraries
 Source0:	http://www.etla.net/libstroke/%{name}-%{version}.tar.gz
+# Source0-md5:	51b9a4e309ac15cfcab96191eed03cb2
 Patch0:		%{name}-am15.patch
 URL:		http://www.etla.net/libstroke/
 BuildRequires:	XFree86-devel
