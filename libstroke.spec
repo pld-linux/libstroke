@@ -34,7 +34,7 @@ Requires:	%{name} = %{version}
 %description devel
 Header files and develpment documentation for libstroke.
 
-%description -l pl devel
+%description devel -l pl
 Pliki nag³ówkowe i dokumetacja do libstroke.
 
 %package static
@@ -46,7 +46,7 @@ Requires:	%{name}-devel = %{version}
 %description static
 Static libstroke library.
 
-%description -l pl static
+%description static -l pl
 Biblioteka statyczna libstroke.
 
 %prep
