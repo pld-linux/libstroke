@@ -62,7 +62,7 @@ Biblioteka statyczna libstroke.
 %setup -q
 
 %build
-%configure \
+%configure2_13 \
 	--with-x \
 	--disable-tcl
 %{__make}
