@@ -1,5 +1,5 @@
-Summary:	a stroke translation library
-Summary(pl):	biblioteka translacji przesuwu myszki
+Summary:	A stroke translation library
+Summary(pl):	Biblioteka translacji przesuwu myszki
 Name:		libstroke
 Version:	0.5.1
 Release:	1
