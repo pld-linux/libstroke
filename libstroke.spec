@@ -61,8 +61,8 @@ Biblioteka statyczna libstroke.
 rm -f missing
 libtoolize --copy --force
 aclocal
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 %configure \
 	--with-x \
 	--disable-tcl
