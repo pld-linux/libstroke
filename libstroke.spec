@@ -2,12 +2,16 @@ Summary:	a stroke translation library
 Summary(pl):	biblioteka translacji przesuwu myszki
 Name:		libstroke
 Version:	0.4
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Libraries
 Source0:	http://www.etla.net/libstroke/%{name}-%{version}.tar.gz
+Patch0:		%{name}-am15.patch
 URL:		http://www.etla.net/libstroke/
 BuildRequires:	XFree86-devel
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -51,9 +55,15 @@ Biblioteka statyczna libstroke.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-%configure2_13 \
+rm -f missing
+libtoolize --copy --force
+aclocal
+autoconf
+automake -a -c -f
+%configure \
 	--with-x \
 	--disable-tcl
 %{__make}
