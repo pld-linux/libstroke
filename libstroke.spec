@@ -5,13 +5,6 @@ Version:	0.4
 Release:	1
 License:	GPL
 Group:		X11/Libraries
-Group(de):	X11/Libraries
-Group(es):	X11/Bibliotecas
-Group(fr):	X11/Librairies
-Group(pl):	X11/Biblioteki
-Group(pt_BR):	X11/Bibliotecas
-Group(ru):	X11/Библиотеки
-Group(uk):	X11/Б╕бл╕отеки
 Source0:	http://www.etla.net/libstroke/%{name}-%{version}.tar.gz
 URL:		http://www.etla.net/libstroke/
 BuildRequires:	XFree86-devel
@@ -35,13 +28,6 @@ komendy s╠ bardzo czЙsto stosowane w programach typu CAD.
 Summary:	Header files and develpment documentation for libstroke
 Summary(pl):	Pliki nagЁСwkowe i dokumetacja do libstroke
 Group:		X11/Development/Libraries
-Group(de):	X11/Entwicklung/Libraries
-Group(es):	X11/Desarrollo/Bibliotecas
-Group(fr):	X11/Development/Librairies
-Group(pl):	X11/Programowanie/Biblioteki
-Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
-Group(ru):	X11/Разработка/Библиотеки
-Group(uk):	X11/Розробка/Б╕бл╕отеки
 
 Requires:	%{name} = %{version}
 
@@ -55,13 +41,6 @@ Pliki nagЁСwkowe i dokumetacja do libstroke.
 Summary:	Static libstroke library
 Summary(pl):	Biblioteka statyczna libstroke
 Group:		X11/Development/Libraries
-Group(de):	X11/Entwicklung/Libraries
-Group(es):	X11/Desarrollo/Bibliotecas
-Group(fr):	X11/Development/Librairies
-Group(pl):	X11/Programowanie/Biblioteki
-Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
-Group(ru):	X11/Разработка/Библиотеки
-Group(uk):	X11/Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
