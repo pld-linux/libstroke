@@ -69,8 +69,6 @@ Biblioteka statyczna libstroke.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_includedir}/net \
-	$RPM_BUILD_ROOT{%{_libdir},%{_mandir}/man3}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
