@@ -1,8 +1,8 @@
 Summary:	a stroke translation library
 Summary(pl):	biblioteka translacji przesuwu myszki
 Name:		libstroke
-Version:	0.4
-Release:	2
+Version:	0.5.1
+Release:	1
 License:	GPL
 Group:		X11/Libraries
 Source0:	http://www.etla.net/libstroke/%{name}-%{version}.tar.gz
@@ -72,7 +72,8 @@ rm -f missing
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	m4datadir=%{_aclocaldir}
 
 gzip -9nf AUTHORS CREDITS README* NEWS TODO
 
@@ -85,7 +86,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc *.gz
-%attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
@@ -93,6 +93,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_includedir}/*.h
+%{_aclocaldir}/*.m4
 
 %files static
 %defattr(644,root,root,755)
