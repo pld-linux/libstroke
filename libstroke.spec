@@ -1,5 +1,5 @@
 Summary:	A stroke translation library
-Summary(pl):	Biblioteka translacji przesuwu myszki
+Summary(pl.UTF-8):   Biblioteka translacji przesuwu myszki
 Name:		libstroke
 Version:	0.5.1
 Release:	2
@@ -24,38 +24,38 @@ used extensively in CAD programs. I fell in love with them when I was
 using the Mentor Graphics CAD tools and the CAD tools internally
 developed by Intel.
 
-%description -l pl
-LibStroke to biblioteka t≥umacz±ca ruchy myszk±. Ruchy mog± byÊ
+%description -l pl.UTF-8
+LibStroke to biblioteka t≈ÇumaczƒÖca ruchy myszkƒÖ. Ruchy mogƒÖ byƒá
 przechwycone przez program i zinterpretowane jako komenda. Tego typu
-komendy s± bardzo czÍsto stosowane w programach typu CAD.
+komendy sƒÖ bardzo czƒôsto stosowane w programach typu CAD.
 
 %package devel
 Summary:	Header files for libstroke library
-Summary(pl):	Pliki nag≥Ûwkowe biblioteki libstroke
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe biblioteki libstroke
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for libstroke library.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe biblioteki libstroke.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe biblioteki libstroke.
 
 %package static
 Summary:	Static libstroke library
-Summary(pl):	Biblioteka statyczna libstroke
+Summary(pl.UTF-8):   Biblioteka statyczna libstroke
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libstroke library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka statyczna libstroke.
 
 %package -n libgstroke
 Summary:	libgstroke - GNOME stroke implementation
-Summary(pl):	libgstroke - implementacja stroke dla GNOME
+Summary(pl.UTF-8):   libgstroke - implementacja stroke dla GNOME
 Group:		X11/Libraries
 Requires:	gtk+ >= 1.2.7
 Conflicts:	libstroke < 0.5.1-2
@@ -63,12 +63,12 @@ Conflicts:	libstroke < 0.5.1-2
 %description -n libgstroke
 libgstroke - GNOME stroke implementation.
 
-%description -n libgstroke -l pl
+%description -n libgstroke -l pl.UTF-8
 libgstroke - implementacja stroke dla GNOME.
 
 %package -n libgstroke-devel
 Summary:	Header files for libgstroke library
-Summary(pl):	Pliki nag≥Ûwkowe biblioteki libgstroke
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe biblioteki libgstroke
 Group:		X11/Development/Libraries
 Requires:	libgstroke = %{version}-%{release}
 Requires:	gtk+-devel >= 1.2.7
@@ -76,19 +76,19 @@ Requires:	gtk+-devel >= 1.2.7
 %description -n libgstroke-devel
 Header files for libgstroke library.
 
-%description -n libgstroke-devel -l pl
-Pliki nag≥Ûwkowe biblioteki libgstroke.
+%description -n libgstroke-devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe biblioteki libgstroke.
 
 %package -n libgstroke-static
 Summary:	Static libgstroke library
-Summary(pl):	Statyczna biblioteka libgstroke
+Summary(pl.UTF-8):   Statyczna biblioteka libgstroke
 Group:		X11/Development/Libraries
 Requires:	libgstroke-devel = %{version}-%{release}
 
 %description -n libgstroke-static
 Static libgstroke library.
 
-%description -n libgstroke-static -l pl
+%description -n libgstroke-static -l pl.UTF-8
 Statyczna biblioteka libgstroke.
 
 %prep
