@@ -1,5 +1,5 @@
 Summary:	A stroke translation library
-Summary(pl.UTF-8):   Biblioteka translacji przesuwu myszki
+Summary(pl.UTF-8):	Biblioteka translacji przesuwu myszki
 Name:		libstroke
 Version:	0.5.1
 Release:	2
@@ -31,7 +31,7 @@ komendy są bardzo często stosowane w programach typu CAD.
 
 %package devel
 Summary:	Header files for libstroke library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libstroke
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libstroke
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -43,7 +43,7 @@ Pliki nagłówkowe biblioteki libstroke.
 
 %package static
 Summary:	Static libstroke library
-Summary(pl.UTF-8):   Biblioteka statyczna libstroke
+Summary(pl.UTF-8):	Biblioteka statyczna libstroke
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -55,7 +55,7 @@ Biblioteka statyczna libstroke.
 
 %package -n libgstroke
 Summary:	libgstroke - GNOME stroke implementation
-Summary(pl.UTF-8):   libgstroke - implementacja stroke dla GNOME
+Summary(pl.UTF-8):	libgstroke - implementacja stroke dla GNOME
 Group:		X11/Libraries
 Requires:	gtk+ >= 1.2.7
 Conflicts:	libstroke < 0.5.1-2
@@ -68,7 +68,7 @@ libgstroke - implementacja stroke dla GNOME.
 
 %package -n libgstroke-devel
 Summary:	Header files for libgstroke library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libgstroke
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libgstroke
 Group:		X11/Development/Libraries
 Requires:	libgstroke = %{version}-%{release}
 Requires:	gtk+-devel >= 1.2.7
@@ -81,7 +81,7 @@ Pliki nagłówkowe biblioteki libgstroke.
 
 %package -n libgstroke-static
 Summary:	Static libgstroke library
-Summary(pl.UTF-8):   Statyczna biblioteka libgstroke
+Summary(pl.UTF-8):	Statyczna biblioteka libgstroke
 Group:		X11/Development/Libraries
 Requires:	libgstroke-devel = %{version}-%{release}
 
