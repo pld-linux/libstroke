@@ -2,7 +2,7 @@ Summary:	A stroke translation library
 Summary(pl.UTF-8):	Biblioteka translacji przesuwu myszki
 Name:		libstroke
 Version:	0.5.1
-Release:	4
+Release:	5
 License:	GPL
 Group:		Libraries
 Source0:	http://www.etla.net/libstroke/%{name}-%{version}.tar.gz
@@ -121,10 +121,14 @@ rm -rf $RPM_BUILD_ROOT
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
+%post   -n libgstroke -p /sbin/ldconfig
+%postun -n libgstroke -p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS COPYRIGHT CREDITS README NEWS TODO doc/standard_strokes*
 %attr(755,root,root) %{_libdir}/libstroke.so.*.*
+%attr(755,root,root) %ghost %{_libdir}/libstroke.so.0
 
 %files devel
 %defattr(644,root,root,755)
@@ -141,6 +145,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.libgstroke
 %attr(755,root,root) %{_libdir}/libgstroke.so.*.*
+%attr(755,root,root) %ghost %{_libdir}/libgstroke.so.0
 
 %files -n libgstroke-devel
 %defattr(644,root,root,755)
