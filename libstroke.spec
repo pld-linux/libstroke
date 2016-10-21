@@ -2,7 +2,7 @@ Summary:	A stroke translation library
 Summary(pl.UTF-8):	Biblioteka translacji przesuwu myszki
 Name:		libstroke
 Version:	0.5.1
-Release:	5
+Release:	6
 License:	GPL
 Group:		Libraries
 Source0:	http://www.etla.net/libstroke/%{name}-%{version}.tar.gz
