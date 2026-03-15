@@ -1,0 +1,88 @@
+--- libstroke-0.5.1/libgstroke/gnome-stroke-draw.c.orig	2026-03-15 16:12:41.439895230 +0100
++++ libstroke-0.5.1/libgstroke/gnome-stroke-draw.c	2026-03-15 16:12:49.856561896 +0100
+@@ -30,8 +30,10 @@
+ 
+ #define GSTROKE_SIGNALS "gstroke_signals"
+ 
++typedef void (*GstrokeFunc) (GtkWidget *, gpointer);
++
+ struct gstroke_func_and_data {
+-  GtkSignalFunc func;
++  GstrokeFunc func;
+   gpointer data;
+ };
+ 
+@@ -189,7 +191,7 @@
+ guint
+ gstroke_signal_connect (GtkWidget *widget,
+                         const gchar *name,
+-                        GtkSignalFunc func,
++                        GstrokeFunc func,
+                         gpointer data)
+ {
+   struct gstroke_func_and_data *func_and_data;
+--- libstroke-0.5.1/libgstroke/gstroke.h.orig	2026-03-15 16:12:41.439895230 +0100
++++ libstroke-0.5.1/libgstroke/gstroke.h	2026-03-15 16:12:52.959895230 +0100
+@@ -28,12 +28,14 @@
+ /* the mouse button used for strokes */
+ #define GSTROKE_MOUSE_BUTTON 2
+ 
++typedef void (*GstrokeFunc) (GtkWidget *, gpointer);
++
+ /* enable strokes for the widget */
+ void gstroke_enable (GtkWidget *widget);
+ 
+ guint gstroke_signal_connect (GtkWidget *widget,
+                               const gchar *name,
+-                              GtkSignalFunc func,
++                              GstrokeFunc func,
+                               gpointer data);
+ 
+ /* frees all the memory allocated for stroke, should be called when
+--- libstroke-0.5.1/tests/gnome_stroke_test.c.orig	2026-03-15 16:12:41.443228563 +0100
++++ libstroke-0.5.1/tests/gnome_stroke_test.c	2026-03-15 16:13:00.763228563 +0100
+@@ -32,19 +32,19 @@
+ }
+ 
+ static void
+-gstroke_exit (GtkWidget *widget G_GNUC_UNUSED)
++gstroke_exit (GtkWidget *widget G_GNUC_UNUSED, gpointer data G_GNUC_UNUSED)
+ {
+   gtk_main_quit ();
+ }
+ 
+ static void
+-gstroke_clear (GtkWidget *widget)
++gstroke_clear (GtkWidget *widget, gpointer data G_GNUC_UNUSED)
+ {
+   gdk_window_clear (widget->window);
+ }
+ 
+ static void
+-gstroke_help (GtkWidget *widget G_GNUC_UNUSED)
++gstroke_help (GtkWidget *widget G_GNUC_UNUSED, gpointer data G_GNUC_UNUSED)
+ {
+   printf ("-----\nStroke 456 clears the screen\n");
+   printf ("Stroke 654 exits the program\n");
+@@ -81,9 +81,9 @@
+ 
+   /* The sequence below shows how to use libgstroke */
+   gstroke_enable (da);
+-  gstroke_signal_connect (da, "654", (GtkSignalFunc)gstroke_exit, NULL);
+-  gstroke_signal_connect (da, "456", (GtkSignalFunc)gstroke_clear, NULL);
+-  gstroke_signal_connect (da, "4123658", (GtkSignalFunc)gstroke_help, NULL);
++  gstroke_signal_connect (da, "654", gstroke_exit, NULL);
++  gstroke_signal_connect (da, "456", gstroke_clear, NULL);
++  gstroke_signal_connect (da, "4123658", gstroke_help, NULL);
+ 
+   gtk_box_pack_start (GTK_BOX (vbox), da, TRUE, TRUE, 0);
+   gtk_widget_show (da);
+@@ -110,7 +110,7 @@
+ 
+   /*hack: call the help function to display the help message*/
+ 
+-  gstroke_help (window);
++  gstroke_help (window, NULL);
+ 
+   gtk_main ();
+   return 0;

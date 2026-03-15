@@ -2,7 +2,7 @@ Summary:	A stroke translation library
 Summary(pl.UTF-8):	Biblioteka translacji przesuwu myszki
 Name:		libstroke
 Version:	0.5.1
-Release:	6
+Release:	7
 License:	GPL
 Group:		Libraries
 Source0:	http://www.etla.net/libstroke/%{name}-%{version}.tar.gz
@@ -10,6 +10,8 @@ Source0:	http://www.etla.net/libstroke/%{name}-%{version}.tar.gz
 Patch0:		%{name}-am15.patch
 Patch1:		%{name}-am18.patch
 Patch2:		%{name}-link.patch
+Patch3:		%{name}-include-string.patch
+Patch4:		%{name}-func-pointer.patch
 URL:		http://www.etla.net/libstroke/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -96,6 +98,8 @@ Statyczna biblioteka libgstroke.
 %patch -P0 -p1
 %patch -P1 -p1
 %patch -P2 -p1
+%patch -P3 -p1
+%patch -P4 -p1
 
 %build
 %{__libtoolize}
